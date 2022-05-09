@@ -1,0 +1,43 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Projeto Aniversario</title>
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="w-100 p-3 d-flex justify-content-center" style="background-color: #eee;">
+        <div>
+            <nav class="navbar navbar-dark bg-primary m-1 ">
+                <a class="navbar-brand m-3 fw-bold" href="#">Conversor de Real para Dolar</a>
+            </nav>
+        </div>
+    </div>
+
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mt-0 mb-0" role="alert">
+            <strong class="d-flex justify-content-center">@TempData["MensagemErro"]</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+    }
+
+    @RenderBody()
+
+
+
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+</body>
+</html>
+

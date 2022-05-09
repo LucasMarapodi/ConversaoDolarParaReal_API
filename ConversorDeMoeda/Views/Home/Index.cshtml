@@ -1,0 +1,44 @@
+﻿@model ConversorDeMoeda.Models.ValorModel
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (@Html.BeginForm())
+{
+
+    <div class="w-100 p-3 d-flex justify-content-center" style="background-color: #d6d6d6; ">
+        <div class="row m-2 p-1">
+
+            <div class="col">
+                <label>Dolar:</label>
+                @Html.TextBoxFor(model => model.ValorDolar,
+                 new
+                 {
+                     @class = "form-control",
+                     @placeholder = "Dolar: R$" + @Model.ValorReal + ""
+                 }
+            )
+                @Html.ValidationMessageFor(model => model.ValorDolar, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col">
+                <label>Real:</label>
+                <input type="text" class="form-control disabled" readonly value="R$ @Model.ValorConvertido" />
+            </div>
+
+            <div class="col mt-4 ">
+                <button type="submit" class="btn btn-primary">Conversão</button>
+            </div>
+
+
+
+            @Html.HiddenFor(model => model.ValorReal)
+
+
+
+
+
+        </div>
+    </div>
+}
